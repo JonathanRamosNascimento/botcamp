@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./App.css"
+import BtnBotCamp from "./components/BtnBotCamp";
 
 class App extends Component {
     render() {
-        return <button className="btn-botcamp">Entrar</button>
+        return <BtnBotCamp />
     }
 }
 
-export default App
+export default App;
