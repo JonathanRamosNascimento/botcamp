@@ -6,7 +6,7 @@ import HeaderWrapper from "../../components/HeaderWrapper";
 
 const Chat = () =>
     <HeaderWrapper>
-        <LogoBotcamp />
+        <LogoBotcamp small />
         <LogoutBotcamp />
     </HeaderWrapper>
 
