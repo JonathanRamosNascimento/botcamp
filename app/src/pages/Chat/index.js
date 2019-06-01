@@ -8,6 +8,7 @@ import InputMessage from "../../components/InputMessage";
 import MessageBotcamp from "../../components/MessageBotcamp";
 import MessageWrapper from "../../components/MessageWrapper";
 import AvatarMessage from "../../components/AvatarMessage";
+import FormMessage from "../../components/FormMessage";
 
 const Chat = () =>
     <>
@@ -21,7 +22,13 @@ const Chat = () =>
             <MessageBotcamp>!cpf</MessageBotcamp>
             <AvatarMessage content="123.123.123-23" />
         </MessageWrapper>
-        <InputMessage />
+
+        <FormMessage onSubmit={(event) => {
+            event.preventDefault();
+            console.log("Vai")
+        }}>
+            <InputMessage />
+        </FormMessage>
     </>
 
 export default Chat;
