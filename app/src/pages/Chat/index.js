@@ -10,6 +10,15 @@ import MessageWrapper from "../../components/MessageWrapper";
 import AvatarMessage from "../../components/AvatarMessage";
 import FormMessage from "../../components/FormMessage";
 
+const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Vai")
+}
+
+const handleChange = (event) => {
+    console.log(event.target.value)
+}
+
 const Chat = () =>
     <>
         <HeaderWrapper>
@@ -23,11 +32,8 @@ const Chat = () =>
             <AvatarMessage content="123.123.123-23" />
         </MessageWrapper>
 
-        <FormMessage onSubmit={(event) => {
-            event.preventDefault();
-            console.log("Vai")
-        }}>
-            <InputMessage />
+        <FormMessage onSubmit={handleSubmit}>
+            <InputMessage onChange={handleChange} />
         </FormMessage>
     </>
 
