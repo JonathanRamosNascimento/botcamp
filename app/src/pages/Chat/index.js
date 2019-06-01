@@ -7,6 +7,7 @@ import HeaderWrapper from "../../components/HeaderWrapper";
 import InputMessage from "../../components/InputMessage";
 import MessageBotcamp from "../../components/MessageBotcamp";
 import MessageWrapper from "../../components/MessageWrapper";
+import AvatarBot from "../../components/AvatarBot";
 
 const Chat = () =>
     <>
@@ -18,6 +19,7 @@ const Chat = () =>
         </HeaderWrapper>
         <MessageWrapper>
             <MessageBotcamp>!cpf</MessageBotcamp>
+            <AvatarBot />
         </MessageWrapper>
         <InputMessage />
     </>
