@@ -20,6 +20,7 @@ const Chat = () =>
         <MessageWrapper>
             <MessageBotcamp>!cpf</MessageBotcamp>
             <AvatarBot />
+            <MessageBotcamp bot>123.123.123-21</MessageBotcamp>
         </MessageWrapper>
         <InputMessage />
     </>
