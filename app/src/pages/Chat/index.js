@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import LogoBotcamp from "../../components/LogoBotcamp";
@@ -7,34 +7,37 @@ import HeaderWrapper from "../../components/HeaderWrapper";
 import InputMessage from "../../components/InputMessage";
 import MessageBotcamp from "../../components/MessageBotcamp";
 import MessageWrapper from "../../components/MessageWrapper";
-import AvatarMessage from "../../components/AvatarMessage";
 import FormMessage from "../../components/FormMessage";
 
-const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Vai")
-}
+const Chat = () => {
+    const [typing, setTyping] = useState("");
+    const [messages, setMessages] = useState([]);
 
-const handleChange = (event) => {
-    console.log(event.target.value)
-}
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setMessages([typing]);
+        setTyping("");
+    }
 
-const Chat = () =>
-    <>
-        <HeaderWrapper>
-            <LogoBotcamp small />
-            <Link to="/">
-                <LogoutBotcamp />
-            </Link>
-        </HeaderWrapper>
-        <MessageWrapper>
-            <MessageBotcamp>!cpf</MessageBotcamp>
-            <AvatarMessage content="123.123.123-23" />
-        </MessageWrapper>
+    const handleChange = (event) => setTyping(event.target.value);
 
-        <FormMessage onSubmit={handleSubmit}>
-            <InputMessage onChange={handleChange} />
-        </FormMessage>
-    </>
+    return (
+        <>
+            <HeaderWrapper>
+                <LogoBotcamp small />
+                <Link to="/">
+                    <LogoutBotcamp />
+                </Link>
+            </HeaderWrapper>
+            <MessageWrapper>
+                {messages.map((msg, key) => <MessageBotcamp key={key}>{msg}</MessageBotcamp>)}
+            </MessageWrapper>
+
+            <FormMessage onSubmit={handleSubmit}>
+                <InputMessage value={typing} onChange={handleChange} />
+            </FormMessage>
+        </>
+    );
+};
 
 export default Chat;
