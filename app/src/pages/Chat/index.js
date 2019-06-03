@@ -15,7 +15,7 @@ const Chat = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setMessages([typing]);
+        setMessages(old => [...old, typing]);
         setTyping("");
     }
 
